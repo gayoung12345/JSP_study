@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=utf-8" %> <!-- encoding -->
+<%@ page import = "java.util.Date" %> <!-- Date함수를 쓸 수 있도록 import -->
 <html>
 <head>
 <title>Welcome</title>
@@ -8,18 +10,10 @@
 	<div class="container py-4">
 	
 		<!-- header: menu -->
-		<header class="pb-3 mb-4 border-bottom">
-			<a href="./welcome.jsp" class="d-flex align-items-center text-dark text-decoration-none">
-				<svg width="32" height="32" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
-  					<path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z" />
-  					<path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z" />
-				</svg>
-				<span class="fs-4">Home</span>
-			</a>
-		</header>
+		<%@ include file="menu.jsp" %> <!-- include directive tag -->
 		
 		<!-- 선언문태그 -->
-		<%!String greeting = "Welcome to Book Shopping Mall";
+		<%!String greeting = "도서 쇼핑몰에 오신 것을 환영합니다.";
 		String tagline = "Welcome to Web Market!";%>
 		
 		<!-- middle title -->
@@ -35,13 +29,33 @@
 			<div class="col-md-12">
 				<div class="h-100 p-5">
 					<h3><%=tagline%></h3> <!-- 표현문태그 -->
+					<!-- 시간 출력 스크립틀릿 태그 -->
+					<%
+						Date day = new java.util.Date(); // Date 타입 객체 day 생성
+						String am_pm; // 오전,오후를 구분하는 String변수 am_pm선언
+						
+						int hour = day.getHours();		// 시
+						int minute = day.getMinutes();	// 분
+						int second = day.getSeconds();	// 초
+						
+						// AM, PM 비교
+						if(hour/12 == 0) { // 현재 시각 / 12 = 값이 1보다 작으면 true
+							am_pm = "AM"; // 오전
+						} else {
+							am_pm = "PM"; // 오후
+							hour=hour-12;
+						}
+						
+						// 시간 출력
+						String CT = hour + ":" + minute + ":" + second + " " + am_pm;
+						out.println("현재 접속 시각: " + CT + "\n");
+					%>
 				</div>
 			</div>
 		</div>
 		
 		<!-- bottom: copyright -->
-		<footer class="pt-3 mt-4 text-body-secondary border-top">
-			&copy; BookMarket </footer>
+		<%@ include file="footer.jsp" %> <!-- include directive tag -->
 
 	</div>
 
