@@ -1,0 +1,117 @@
+package dto;
+
+import java.io.Serializable;
+
+public class Book implements Serializable{
+	
+	// Java 직렬화에서 클래스 버전을 식별하고 관리하여 객체의 직렬화와 역직렬화 과정에서 안정성과 호환성을 보장
+	private static final long serialVersionUID = -4274700572038677000L;
+
+	// member
+	private String bookId; 			// 도서 id
+	private String name;			// 도서명
+	private int unitPrice;			// 가격
+	private String author;			// 저자
+	private String description;		// 설명
+	private String publisher;		// 출판사
+	private String category;		// 분류
+	private long unitsInStock;		// 재고개수
+	private String releaseDate;		// 출판일(월/년)
+	private String condition;		// 신제품 or 구제품 or 리퍼브제품
+	
+	// default constructor
+	public Book() {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+
+	// book constructor
+	public Book(String bookId, String name, int unitPrice) {
+		super();
+		this.bookId = bookId;
+		this.name = name;
+		this.unitPrice = unitPrice;
+	}
+
+	// Getter(), Setter()
+	public String getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getUnitPrice() {
+		return unitPrice;
+	}
+
+	public void setUnitPrice(int unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public long getUnitsInStock() {
+		return unitsInStock;
+	}
+
+	public void setUnitsInStock(long unitsInStock) {
+		this.unitsInStock = unitsInStock;
+	}
+
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+
+	public String getCondition() {
+		return condition;
+	}
+
+	public void setCondition(String condition) {
+		this.condition = condition;
+	}
+	
+}
