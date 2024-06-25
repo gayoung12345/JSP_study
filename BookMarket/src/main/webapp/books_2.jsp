@@ -2,8 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="dto.Book"%>
-<%@ page import="dao.BookRepository" %>
-<%-- <jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session"></jsp:useBean> --%>
+<jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session"></jsp:useBean>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,42 +20,33 @@
 			<div class="container-fluid py-5">
 				<h1 class="display-5 fw-bold">도서목록</h1>
 				<p class="col-md-8 fs-4">BookList</p>
-				<button type="button" onclick="location.href='./addBook.jsp'">도서추가</button>
 			</div>
 		</div>
 
 		<%
-/* 		ArrayList<Book> listOfBooks = bookDAO.getAllBooks(); */
-BookRepository dao = BookRepository.getInstance();
-ArrayList<Book> listOfBooks = dao.getAllBooks();
+		ArrayList<Book> listOfBooks = bookDAO.getAllBooks();
 		%>
 
 		<div class="row align-items-md-stretch text-center">
-			<%
-			for (int i = 0; i < listOfBooks.size(); i++) {
-				Book book = listOfBooks.get(i);
-			%>
+
+<% for(int i=0;i<listOfBooks.size();i++){ %>
 
 			<div class="col-md-4">
 				<div class="h-100 p-2">
 					<h5>
-						<b><%=book.getName()%></b>
+						<b>책이름</b>
 					</h5>
-					<p><%=book.getAuthor()%>
-						<br><%=book.getPublisher()%>
+					<p>책저자
+						<br>출판사
 						|
-						<%=book.getUnitPrice()%>원
+						1600000원
+					<p>어쩌구저쩌구블라블라...
 					<p>
-						<a href="./book.jsp?id=<%=book.getBookId()%>"
-							class="btn btn-secondary" role="button">상세정보&raquo;</a>
-					<p><%=book.getDescription().substring(0, 10)%>...
-					<p>
-						<%=book.getUnitPrice()%>원
+						160000000원
 				</div>
 			</div>
-			<%
-			}
-			%>
+
+<%} %>
 
 		</div>
 		<%@ include file="footer.jsp"%>
