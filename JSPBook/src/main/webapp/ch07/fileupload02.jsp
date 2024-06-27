@@ -1,0 +1,23 @@
+<!-- MultipartRequest 클래스를 이용하여 여러 파일 업로드 및 정보 출력 -->
+<%@ page contentType="text/html; charset=utf-8"%>
+<html>
+<head>
+<title>File Upload</title>
+</head>
+<body>
+	<form name="fileForm" method="post" enctype="multipart/form-data" action="fileupload02_process.jsp">
+		<p> 이 름1 : <input type="text" name="name1">
+			제 목1 : <input type="text" name="subject1">
+		 	파 일1 : <input type="file" name="filename1">
+		
+		<p> 이 름2 : <input type="text" name="name2">
+			제 목2 : <input type="text" name="subject2">
+			파 일2 : <input type="file" name="filename2">
+		
+		<p> 이 름3 : <input type="text" name="name3">
+			제 목3 : <input type="text" name="subject3">
+			파 일3 : <input type="file" name="filename3">
+		<p> <input type="submit" value="파일 올리기">	<!-- 데이터를 서버에 전송 -->
+	</form>
+</body>
+</html>

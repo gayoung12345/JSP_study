@@ -1,15 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="dto.Book"%>
-<%@ page import="dao.BookRepository" %>
+<%@ page import="dao.BookRepository"%>
 <%-- <jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session" /> --%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet">
+-->
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 <title>Insert title here</title>
 </head>
 <body>
@@ -31,7 +34,11 @@
 		%>
 
 		<div class="row align-items-md-stretch">
-			<div class="col-md-12">
+			<div class="col-md-5">
+				<img alt="<%=book.getFilename()%>" src="./resources/images/<%=book.getFilename()%>"
+					style="width: 70%">
+			</div>
+			<div class="col-md-6">
 				<h3>
 					<b><%=book.getName()%></b>
 				</h3>
