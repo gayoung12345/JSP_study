@@ -4,12 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- 
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-	rel="stylesheet">
--->
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
+<script type="text/javascript" src="./resources/js/validation.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -96,7 +92,7 @@
 				</div>
 				<div class="mb-3 row">
 					<div class="col-sm-offset-2 col-sm-10">
-						<input type="submit" class="btn btn-primary" value="등록">
+						<input type="button" class="btn btn-primary" value="등록" onclick="CheckAddBook()">
 					</div>
 				</div>
 			</form>
