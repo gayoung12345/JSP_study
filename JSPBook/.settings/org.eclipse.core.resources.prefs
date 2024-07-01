@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/java/ch09/com/bundle/myBundle.properties=UTF-8
+encoding//src/main/java/ch09/com/bundle/myBundle_en.properties=UTF-8
 encoding//src/main/webapp/ch02/declaration01.jsp=UTF-8
 encoding//src/main/webapp/ch02/declaration02.jsp=UTF-8
 encoding//src/main/webapp/ch02/declaration03.jsp=UTF-8
