@@ -5,7 +5,7 @@
 <title>Security</title>
 </head>
 <body>
-	<form name="loginForm" action="/j_security_check" method="post">
+	<form name="loginForm" action="j_security_check" method="post">
 		<p>
 			사용자명 : <input type="text" name="j_username">
 		</p>
